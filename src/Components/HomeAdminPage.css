@@ -1,94 +1,88 @@
-/* General body styling */
-body {
-    font-family: 'Arial', sans-serif; /* Sets the font across the page */
-    margin: 0;
-    padding: 0;
-    background: #f4f4f4; /* Light grey background */
-}
-
-/* Navbar specific styling */
-nav {
-    background-color: #333; /* Dark background for the navbar */
-    color: #fff; /* White text color */
-    padding: 10px 20px; /* Padding around content in navbar */
-    display: flex; /* Ensures items in navbar are in a line */
-    align-items: center; /* Centers items vertically */
-    justify-content: space-between; /* Distributes space between items */
-}
-
-/* Header styling */
-h1 {
-    color: #333; /* Dark grey color for headers */
-    text-align: center; /* Center aligns the header text */
-    padding: 20px; /* Padding around the header */
-    margin-top: 20px; /* Space above the header */
-}
-
-/* Adding some space around the main div */
-.content {
+.HomeAdminPage-container {
     display: flex;
-    justify-content: flex-end; /* Aligns items to the right */
-    align-items: flex-start;
+  }
+  
+  
+  .navigation {
+    width: 200px;
+    background-color: #f0f0f0;
     padding: 20px;
-    max-width: 1200px; /* Maximum width for the content area */
-    margin: 0 auto; /* Center the content */
-    box-sizing: border-box; /* Ensure padding is included in the width calculation */
-    margin-right: 3cm;
-}
-
-/* Styling for the logs table */
-.logs-table {
-    background: #fff;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    border-radius: 5px;
-    padding: 20px;
-    width: 48%; /* Adjust width to take half the space */
-    box-sizing: border-box; /* Ensure padding is included in the width calculation */
-    margin-right: 2%; /* Space between the logs table and news box */
-}
-
-/* Styling for the news section */
-.news {
-    background: #fff;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    border-radius: 5px;
-    padding: 20px;
-    width: 45%; /* Adjust width to take half the space */
-    box-sizing: border-box; /* Ensure padding is included in the width calculation */
-}
-
-.news-content {
-    padding: 10px; /* Adjust padding as needed */
-    margin: 0; /* Remove margin */
-    box-sizing: border-box; /* Ensure padding is included in the width calculation */
-    width: 100%; /* Make the text box take the full width of the parent */
-    height: auto; /* Adjust height as needed */
-}
-/* Styling for table */
-table {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  
+  .navigation ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  
+  .navigation ul li {
+    margin: 10px 0;
+  }
+  
+  
+  .navigation .search-bar {
+    margin: 20px 0;
+  }
+  
+  
+  .navigation .logout-button {
+    margin-top: auto;
+  }
+  
+  
+  .navigation .logout-button button {
     width: 100%;
-    border-collapse: collapse;
-}
-
-th, td {
-    border: 1px solid #ddd;
-    padding: 8px;
-    text-align: left;
-}
-
-th {
-    background-color: #f2f2f2;
-}
-
-/* Adjustments for smaller screens */
-@media (max-width: 768px) {
-    .content {
-        flex-direction: column;
-        padding: 10px;
-    }
-    .logs-table, .news {
-        width: 100%;
-        margin-bottom: 20px; /* Space between the sections */
-        margin-right: 0; /* Remove right margin */
-    }
-}
+    padding: 10px;
+    background-color: #d9534f;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  
+  
+  .content {
+    flex: 1;
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  
+  .box {
+    width: calc(33.3333% - 40px);
+    margin: 10px;
+    padding: 20px;
+    background-color: #e0e0e0;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  
+  .box h2 {
+    margin-top: 0;
+  }
+  
+  
+  .box ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  
+  .box ul li {
+    margin: 5px 0;
+  }
+  
+  
+  .box button {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  

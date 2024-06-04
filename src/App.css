@@ -1,38 +1,73 @@
-.App {
-  text-align: center;
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  display: flex;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.container {
+  display: flex;
+  flex: 1;
+  height: 100vh; /* Set the container to full viewport height */
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.navigation {
+  width: 200px;
+  background-color: #f1f1f1;
+  padding: 20px;
   display: flex;
   flex-direction: column;
+}
+
+.navigation ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.navigation li {
+  margin-bottom: 10px;
+}
+
+.navigation a {
+  text-decoration: none;
+  color: #333; /* Changed link color */
+  font-weight: bold; /* Added font weight */
+  display: block; /* Make links block elements */
+  padding: 10px; /* Added padding */
+  transition: background-color 0.3s ease; /* Smooth background color transition */
+}
+
+.navigation a:hover {
+  background-color: #ddd; /* Change background color on hover */
+}
+
+.content {
+  flex: 1;
+  padding: 20px;
+  display: flex;
+  justify-content: center; /* Center content horizontally */
+  align-items: center; /* Center content vertically */
+}
+
+.search-bar {
+  display: flex;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  padding: 20px;
+  border: 1px solid #ccc;
+}
+
+.search-bar input {
+  padding: 10px;
+  border: none;
+  flex: 1;
+}
+
+.search-bar button {
+  padding: 10px 20px;
+  border: none;
+  background-color: #4CAF50;
   color: white;
+  cursor: pointer;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}

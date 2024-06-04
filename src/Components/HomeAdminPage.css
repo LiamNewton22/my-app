@@ -1,0 +1,94 @@
+/* General body styling */
+body {
+    font-family: 'Arial', sans-serif; /* Sets the font across the page */
+    margin: 0;
+    padding: 0;
+    background: #f4f4f4; /* Light grey background */
+}
+
+/* Navbar specific styling */
+nav {
+    background-color: #333; /* Dark background for the navbar */
+    color: #fff; /* White text color */
+    padding: 10px 20px; /* Padding around content in navbar */
+    display: flex; /* Ensures items in navbar are in a line */
+    align-items: center; /* Centers items vertically */
+    justify-content: space-between; /* Distributes space between items */
+}
+
+/* Header styling */
+h1 {
+    color: #333; /* Dark grey color for headers */
+    text-align: center; /* Center aligns the header text */
+    padding: 20px; /* Padding around the header */
+    margin-top: 20px; /* Space above the header */
+}
+
+/* Adding some space around the main div */
+.content {
+    display: flex;
+    justify-content: flex-end; /* Aligns items to the right */
+    align-items: flex-start;
+    padding: 20px;
+    max-width: 1200px; /* Maximum width for the content area */
+    margin: 0 auto; /* Center the content */
+    box-sizing: border-box; /* Ensure padding is included in the width calculation */
+    margin-right: 3cm;
+}
+
+/* Styling for the logs table */
+.logs-table {
+    background: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    padding: 20px;
+    width: 48%; /* Adjust width to take half the space */
+    box-sizing: border-box; /* Ensure padding is included in the width calculation */
+    margin-right: 2%; /* Space between the logs table and news box */
+}
+
+/* Styling for the news section */
+.news {
+    background: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    padding: 20px;
+    width: 45%; /* Adjust width to take half the space */
+    box-sizing: border-box; /* Ensure padding is included in the width calculation */
+}
+
+.news-content {
+    padding: 10px; /* Adjust padding as needed */
+    margin: 0; /* Remove margin */
+    box-sizing: border-box; /* Ensure padding is included in the width calculation */
+    width: 100%; /* Make the text box take the full width of the parent */
+    height: auto; /* Adjust height as needed */
+}
+/* Styling for table */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+/* Adjustments for smaller screens */
+@media (max-width: 768px) {
+    .content {
+        flex-direction: column;
+        padding: 10px;
+    }
+    .logs-table, .news {
+        width: 100%;
+        margin-bottom: 20px; /* Space between the sections */
+        margin-right: 0; /* Remove right margin */
+    }
+}

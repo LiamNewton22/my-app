@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './Login.css';
 import logo from './Assets/Our_Meat_Logo.png'; // Adjust the path based on your actual file location
 
@@ -6,6 +7,7 @@ function Login() {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [loginMessage, setLoginMessage] = useState('');
+    const navigate = useNavigate();
 
     const handleLogin = async (e) => {
         e.preventDefault();
@@ -22,14 +24,15 @@ function Login() {
             const data = await response.json();
 
             if (response.ok) {
-                // Login successful
-                setLoginMessage(data.message);
+                // Login successful, navigate to HomeAdminPage
+                navigate('/HomeAdminPage');
             } else {
                 // Login failed
-                setLoginMessage(data.message);
+                setLoginMessage('Unsuccessful login');
             }
         } catch (error) {
             console.error('Error:', error);
+            setLoginMessage('Unsuccessful login');
         }
     };
 

@@ -1,112 +1,125 @@
+
 .App {
-    text-align: center;
-  }
- 
+  text-align: center;
+}
+body {
+  background-color: darkslategrey;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
   .App-logo {
-    height: 40vmin;
-    pointer-events: none;
+    animation: App-logo-spin infinite 20s linear;
   }
- 
-  @media (prefers-reduced-motion: no-preference) {
-    .App-logo {
-      animation: App-logo-spin infinite 20s linear;
-    }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+  position: relative; /* Add this line */
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
   }
- 
-  .App-header {
-    background-color: #282c34;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: calc(10px + 2vmin);
-    color: white;
+  to {
+    transform: rotate(360deg);
   }
- 
-  .App-link {
-    color: #61dafb;
-  }
- 
-  @keyframes App-logo-spin {
-    from {
-      transform: rotate(0deg);
-    }
-    to {
-      transform: rotate(360deg);
-    }
-  }
- 
-  .login-container {
+}
+
+.App-header h1 {
+  color: white; /* Header text color */
+}
+
+.login-message {
+  color: black; /* Login message text color */
+}
+
+.login-container {
+  max-width: 400px;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  text-align: center;
+  position: relative;
+}
+
+.company-logo {
+  width: 75px;
+  height: auto;
+  position: absolute;
+  top: 320px; /* Adjust the value to lower or raise the logo */
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+}
+.login-container {
     max-width: 400px;
     margin: auto;
     padding: 20px;
     border: 1px solid #ccc;
     border-radius: 5px;
     background-color: #f9f9f9;
+}
+
+.login-container h2 {
     text-align: center;
-    position: relative;
-  }
+    margin-bottom: 20px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+}
+
+.input-group {
+    margin-bottom: 15px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+}
  
-  .company-logo {
-    width: 75px;
-    height: auto;
-    position: absolute;
-    top: 281px;
-    left: 56%;
-    transform: translateX(-50%);
-    z-index: 1;
-  }
- 
-  .login-container {
-      max-width: 400px;
-      margin: auto;
-      padding: 20px;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-      background-color: #f9f9f9;
-  }
- 
-  .login-container h2 {
-      text-align: center;
-      margin-bottom: 20px;
-      font-size: 24px;
-      font-weight: bold;
-      color: #333;
-  }
- 
-  .input-group {
-      margin-bottom: 15px;
-  }
- 
-  .input-group label {
-      display: block;
-      margin-bottom: 5px;
-      font-size: 16px;
-      font-weight: bold;
-      color: #333;
-  }
- 
-  .input-group input {
-      width: 100%;
-      padding: 8px;
-      box-sizing: border-box;
-      font-size: 16px;
-  }
- 
-  button {
-      width: 100%;
-      padding: 10px;
-      background-color: #007bff;
-      color: white;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      font-size: 16px;
-      font-weight: bold;
-  }
-   
- 
-  button:hover {
-      background-color: #0056b3;
-  }
+
+button:hover {
+    background-color: #0056b3;
+}
+

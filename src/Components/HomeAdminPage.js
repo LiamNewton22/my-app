@@ -1,5 +1,12 @@
+<<<<<<< HEAD
 import React, { useState, useEffect } from 'react';
 import './HomeAdminPage.css';
+=======
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+import './HomeAdminPage.css';
+import Our_Meat_logo from './Assets/Our_Meat_Logo.png';
+>>>>>>> 15eb50b4cdac59bf42e47df244b1c08d52d7cfe2
 
 const HomeAdminPage = () => {
   const navItems = ['Home', 'About', 'Contact'];
@@ -7,6 +14,7 @@ const HomeAdminPage = () => {
   const [projectId, setProjectId] = useState('');
   const [location, setLocation] = useState('Loading...');
 
+<<<<<<< HEAD
   useEffect(() => {
     // Fetch location data from the server when the component mounts
     fetch('http://localhost:3001/meat') // Ensure the correct URL
@@ -26,25 +34,34 @@ const HomeAdminPage = () => {
       });
   }, []);
 
+=======
+>>>>>>> 15eb50b4cdac59bf42e47df244b1c08d52d7cfe2
   const handleSearch = () => {
-    alert(`Searching for: ${searchTerm}`);
+    alert(`Stock From: ${searchTerm}\nMeat 1: 1\nMeat 2: 12\nMeat 3: 123\nMeat 4: 1234\nMeat 5: 12345\nMeat 6: 123456`);
   };
 
   const handleProjectSearch = () => {
-    alert(`Searching for Project ID: ${projectId}`);
+    alert(`Searching for Item ${projectId}\nLocation: Blacktown`);
   };
 
   const handleButtonClick = (boxNumber) => {
-    alert(`Button clicked in Meat ${boxNumber}`);
+    console.log(`Button clicked in Box ${boxNumber}`);
+    // Perform actions here, such as updating state or making API calls
   };
 
   const handleLogout = () => {
-    alert('Logged out');
+    // Perform logout actions here
+    // For example, clearing session storage, removing tokens, etc.
+    // Then redirect the user to the login page
+    // window.location.href = '/login'; // Or use React Router's history for navigation
   };
 
   return (
     <div className="HomeAdminPage-container">
       <nav className="navigation">
+        <div className="logo-container">
+          <img src={Our_Meat_logo} alt="Our Meat Logo" className="logo" />
+        </div>
         <ul>
           {navItems.map(item => (
             <li key={item}>
@@ -71,19 +88,27 @@ const HomeAdminPage = () => {
           <button onClick={handleProjectSearch}>Search</button>
         </div>
         <div className="logout-button">
-          <button onClick={handleLogout}>Logout</button>
+          {/* Link to the logout page or handle logout action */}
+          <Link to="/logout" onClick={handleLogout}>
+            <button>Logout</button>
+          </Link>
         </div>
       </nav>
       <div className="content">
-        {Array.from({ length: 6 }).map((_, index) => (
-          <div className="box" key={index}>
-            <h2>Meat {index + 1}</h2>
+        {[1, 2, 3, 4, 5, 6].map(boxNumber => (
+          <div key={boxNumber} className="box">
+            <h2>Meat {boxNumber}</h2>
             <ul>
               <li>Location: {location}</li>
               <li>Stock: Blah</li>
               <li>Info: Cheese</li>
+              <li>Location:</li>
+              <li>Stock:</li>
+              <li>Info:</li>
             </ul>
-            <button onClick={() => handleButtonClick(index + 1)}>Click Me</button>
+            <Link to="/EditPage">
+              <button onClick={() => handleButtonClick(boxNumber)}>Update</button>
+            </Link>
           </div>
         ))}
       </div>
@@ -91,4 +116,8 @@ const HomeAdminPage = () => {
   );
 };
 
+<<<<<<< HEAD
 export default HomeAdminPage;
+=======
+export default HomeAdminPage;
+>>>>>>> 15eb50b4cdac59bf42e47df244b1c08d52d7cfe2

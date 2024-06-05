@@ -1,32 +1,46 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './HomeAdminPage.css';
-
 
 const HomeAdminPage = () => {
   const navItems = ['Home', 'About', 'Contact'];
   const [searchTerm, setSearchTerm] = useState('');
   const [projectId, setProjectId] = useState('');
+  const [location, setLocation] = useState('Loading...');
 
+  useEffect(() => {
+    // Fetch location data from the server when the component mounts
+    fetch('http://localhost:3001/meat') // Ensure the correct URL
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Network response was not ok ' + response.statusText);
+        }
+        return response.json();
+      })
+      .then(data => {
+        console.log('Fetched data:', data); // Debugging line
+        setLocation(data.location);
+      })
+      .catch(error => {
+        console.error('Error fetching location:', error); // Debugging line
+        setLocation('Error loading location');
+      });
+  }, []);
 
   const handleSearch = () => {
     alert(`Searching for: ${searchTerm}`);
   };
 
-
   const handleProjectSearch = () => {
     alert(`Searching for Project ID: ${projectId}`);
   };
-
 
   const handleButtonClick = (boxNumber) => {
     alert(`Button clicked in Meat ${boxNumber}`);
   };
 
-
   const handleLogout = () => {
     alert('Logged out');
   };
-
 
   return (
     <div className="HomeAdminPage-container">
@@ -65,9 +79,9 @@ const HomeAdminPage = () => {
           <div className="box" key={index}>
             <h2>Meat {index + 1}</h2>
             <ul>
-              <li>Location:</li>
-              <li>Stock:</li>a
-              <li>Info:</li>
+              <li>Location: {location}</li>
+              <li>Stock: Blah</li>
+              <li>Info: Cheese</li>
             </ul>
             <button onClick={() => handleButtonClick(index + 1)}>Click Me</button>
           </div>
@@ -76,6 +90,5 @@ const HomeAdminPage = () => {
     </div>
   );
 };
-
 
 export default HomeAdminPage;

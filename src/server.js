@@ -40,6 +40,24 @@ app.post('/api/login', (req, res) => {
   });
 });
 
+app.get('/meat', (req, res) => {
+  const query = 'SELECT CutType FROM meat WHERE meatID = 4'; 
+
+  con.query(query, (err, results) => { // Use 'con' instead of 'connection'
+      if (err) {
+          console.error('Error executing query:', err);
+          res.status(500).send('Server error');
+          return;
+      }
+
+      if (results.length > 0) {
+          res.json({ location: results[0].CutType }); // Correct field name
+      } else {
+          res.status(404).send('Location not found');
+      }
+  });
+});
+
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
 });
